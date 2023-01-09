@@ -1,0 +1,60 @@
+@use '@angular/material' as mat;
+@use 'primary' as *;
+@use 'secondary' as *;
+
+@include mat.core();
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme((
+        color: (
+                primary: mat.define-palette(mat.$blue-grey-palette, 600),
+                accent: mat.define-palette(mat.$teal-palette),
+        ),
+  // Only include `typography` and `density` in the default dark theme.
+        typography: mat.define-typography-config(),
+        density: 0,
+));
+
+$success: mat.define-palette($primary-blue, 400);
+
+// custom color = "" values
+.mat-success {
+  background-color: hsl(122, 37%, 74%) !important;
+  color: hsl(122, 37%, 20%) !important;
+}
+
+.mat-warn {
+  background-color: hsl(34, 73%, 77%) !important;
+  color: hsl(0, 73%, 20%) !important;
+}
+
+.mat-error {
+  background-color: hsl(0, 73%, 77%) !important;
+  color: hsl(34, 73%, 20%) !important;
+}
+
+.mat-success[disabled] {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+// Define a light theme
+$light-theme: mat.define-light-theme((
+        color: (
+                primary: mat.define-palette(mat.$indigo-palette),
+                accent: mat.define-palette(mat.$pink-palette),
+        ),
+));
+
+// Apply the dark theme by default
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);
+@include mat.all-component-colors($dark-theme);
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+  // Use the `-color` mixins to only apply color styles without reapplying the same
+  // typography and density styles.
+  @include mat.core-color($light-theme);
+  @include mat.button-color($light-theme);
+  @include mat.all-component-colors($light-theme);
+}
