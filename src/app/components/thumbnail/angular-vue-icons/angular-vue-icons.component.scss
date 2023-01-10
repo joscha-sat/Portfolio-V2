@@ -1,0 +1,13 @@
+@use 'index' as *;
+
+.container {
+  flex-wrap: wrap;
+  gap: 20rem;
+  margin-top: $m6;
+}
+
+.image {
+  height: 25rem;
+}
+
+

@@ -1,0 +1,18 @@
+@use 'index' as * ;
+
+.navbar {
+  justify-content: space-between;
+  padding: $p1;
+  margin-bottom: $m4;
+}
+
+.nav-items {
+  a {
+    margin-right: 1rem;
+
+    &:hover {
+      background-color: #212121;
+    }
+  }
+}
+

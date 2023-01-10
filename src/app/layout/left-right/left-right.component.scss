@@ -1,0 +1,12 @@
+@use 'index' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $m6;
+}
+
+.left, .right {
+  flex-grow: 1;
+}

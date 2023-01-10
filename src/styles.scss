@@ -1,9 +1,10 @@
 @use "index" as *;
-
+@use 'mixins' as *;
 
 html {
   font-size: 62.5%; // dadurch wird 1rem = 10 px
 }
+
 
 /* ------------------- */
 /* Reset               */
@@ -47,6 +48,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-size: $normal_text_size;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
@@ -59,6 +61,7 @@ img,
 picture {
   max-width: 100%;
   display: block;
+  object-fit: cover;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -94,4 +97,5 @@ select {
                   #485563 100%
   );
 }
+
 

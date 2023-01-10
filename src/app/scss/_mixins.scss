@@ -1,5 +1,47 @@
+@use 'index' as *;
+
+// MARGIN HELPER ------------------------------------ //
+
 .block:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
+// FONT SIZE ------------------------------------ //
 
+.biggest_text_size {
+  font-size: $biggest_text_size;
+}
+
+.title {
+  font-size: $title;
+}
+
+.header {
+  font-size: $header;
+}
+
+.normal_text {
+  font-size: $normal_text_size;
+}
+
+.small_text {
+  font-size: $small_text_size;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+// FLEX ------------------------------------ //
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// IMAGES
+
+.cover {
+  object-fit: cover;
+}
